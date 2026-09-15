@@ -95,7 +95,10 @@ updated: 2026-09-09
 - [ ] **指标要落到行动**：每个指标背后都要挂一个决策（调难度？加活动？停渠道？），否则只是数字
 
 ## 延伸阅读
-- [留存分析框架](../03-analysis-frameworks/churn-analysis.md)
+- [留存体系：D1/D7/D30、Cohort 与留存曲线形态解读](retention.md)
+- [商业化指标体系：ARPU/ARPPU/付费率/LTV/ROAS 怎么联动看](monetization.md)
+- [新增与买量分析：归因、成本与 ROAS 入门](acquisition.md)
+- [流失分析框架](../03-analysis-frameworks/churn-analysis.md)
 - [用户分层框架](../03-analysis-frameworks/user-portrait.md)
 - [商业化专题分析](../03-analysis-frameworks/monetization-analysis.md)（待写）
 

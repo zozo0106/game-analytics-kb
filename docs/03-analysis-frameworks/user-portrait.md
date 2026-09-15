@@ -99,6 +99,8 @@ RFM 八分群（高/低各两档 → 8 类）落到游戏运营的典型动作�
 
 ## 延伸阅读
 - [指标字典：留存与付费指标](../02-metrics/metric-dictionary.md)
+- [留存体系：D1/D7/D30、Cohort 与留存曲线形态解读](../02-metrics/retention.md)
+- [商业化指标体系：ARPU/ARPPU/付费率/LTV/ROAS](../02-metrics/monetization.md)
 - [流失分析框架](churn-analysis.md)
 - [A/B 测试设计](../04-experimentation/ab-test-design.md) ｜ [A/B 测试常见坑](../04-experimentation/pitfalls.md)
 

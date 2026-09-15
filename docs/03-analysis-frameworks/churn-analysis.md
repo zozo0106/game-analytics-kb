@@ -79,6 +79,7 @@ updated: 2026-09-09
 
 ## 延伸阅读
 - [指标字典：留存指标口径](../02-metrics/metric-dictionary.md)
+- [留存体系：D1/D7/D30、Cohort 与留存曲线形态解读](../02-metrics/retention.md)
 - [用户分层框架](user-portrait.md)
 - [A/B 测试设计](../04-experimentation/ab-test-design.md) ｜ [A/B 测试常见坑](../04-experimentation/pitfalls.md)
 
