@@ -120,7 +120,8 @@ game-analytics-kb/
 - [x] PRJ-2：projects/02-ab-test A/B 测试框架（设计+检验+CUPED+三大坑，含报告）✅ 已跑通
 - [ ] PRJ-3：projects/03-metrics-dashboard 指标体系看板
 - [ ] P1-2：retention / monetization / acquisition
-- [ ] P1-3：ab-test-design + event-campaign
+- [x] P1-3a：ab-test-design + pitfalls（A/B 设计 + 避坑）✅ 已核对（反哺自 PRJ-2）
+- [ ] P1-3b：event-campaign 活动效果评估
 - [ ] P2：RAG 化改造（向量化 + 问答 demo）
 - [ ] 长期：case-studies 持续沉淀
 
@@ -129,3 +130,4 @@ game-analytics-kb/
 - 2026-09-10：P0 三篇完成并通过权威源核对（GameAnalytics 官方博客等）；确立「发布前权威源核对」强制规范
 - 2026-09-11：新增 **projects/ 实战项目层**；PRJ-1 流失预测跑通（合成数据 8,000 用户，AUC 0.93，Top10% 提升度 4.11x），含 SQL 特征提取 + 建模评估 + 分析报告
 - 2026-09-15：**PRJ-2 A/B 测试分析框架完成**（合成 20,000 用户 × 14 天）：前置体检（功效/SRM/分层）→ 主次指标检验 → CUPED（方差缩减 58%）→ 三大坑实测（新奇效应/多重比较/辛普森悖论）；全部方法学对照权威源核对（NIST / WSDM-CUPED / KDD-SRM / Holm / Wilson）
+- 2026-09-15：**知识库 04-experimentation 两篇落地**（ab-test-design + pitfalls），由 PRJ-2 实战反哺；补全 CUPED、SRM、多重比较、偷看问题、新奇效应、辛普森悖论等口径，并核对 Kohavi《Trustworthy Online Controlled Experiments》/ Johari always-valid 等权威源

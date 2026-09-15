@@ -80,7 +80,7 @@ updated: 2026-09-09
 ## 延伸阅读
 - [指标字典：留存指标口径](../02-metrics/metric-dictionary.md)
 - [用户分层框架](user-portrait.md)
-- [A/B 测试设计](../04-experimentation/ab-test-design.md)（待写）
+- [A/B 测试设计](../04-experimentation/ab-test-design.md) ｜ [A/B 测试常见坑](../04-experimentation/pitfalls.md)
 
 ## 参考来源
 - 方法论说明：本文为行业通行分析框架综述（Cohort 留存分析、流失前行为对比、分层召回均为游戏数据分析业界标准做法），框架结构参照 GameAnalytics / Unity 等主流厂商公开方法论

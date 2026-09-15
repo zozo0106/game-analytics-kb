@@ -100,7 +100,7 @@ RFM 八分群（高/低各两档 → 8 类）落到游戏运营的典型动作�
 ## 延伸阅读
 - [指标字典：留存与付费指标](../02-metrics/metric-dictionary.md)
 - [流失分析框架](churn-analysis.md)
-- [A/B 测试设计](../04-experimentation/ab-test-design.md)（待写）
+- [A/B 测试设计](../04-experimentation/ab-test-design.md) ｜ [A/B 测试常见坑](../04-experimentation/pitfalls.md)
 
 ## 参考来源
 - GameAnalytics 官方博客《Player segmentation: Introducing Segments in SegmentIQ》（2026-08）：https://www.gameanalytics.com/blog/player-segmentation-segmentiq —— 分层定义、维度与落地方式已对照本文核对
