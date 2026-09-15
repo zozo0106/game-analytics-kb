@@ -118,7 +118,7 @@ game-analytics-kb/
 - [x] PRJ-1：projects/01-churn-model 流失预测（SQL+Python 全链路，AUC 0.93）✅ 已跑通
 - [ ] P1-1：repo 上线 GitHub（README 门户完善 + git init + 推送）
 - [x] PRJ-2：projects/02-ab-test A/B 测试框架（设计+检验+CUPED+三大坑，含报告）✅ 已跑通
-- [ ] PRJ-3：projects/03-metrics-dashboard 指标体系看板
+- [x] PRJ-3：projects/03-metrics-dashboard 指标体系看板（分层指标体系 + SQL 指标层 + 自包含看板 + 异常告警）✅ 已跑通
 - [ ] P1-2：retention / monetization / acquisition
 - [x] P1-3a：ab-test-design + pitfalls（A/B 设计 + 避坑）✅ 已核对（反哺自 PRJ-2）
 - [x] P1-3b：event-campaign 活动效果评估 ✅ 已核对（DID/PSM/合成控制，落 03-analysis-frameworks）
@@ -132,3 +132,4 @@ game-analytics-kb/
 - 2026-09-15：**PRJ-2 A/B 测试分析框架完成**（合成 20,000 用户 × 14 天）：前置体检（功效/SRM/分层）→ 主次指标检验 → CUPED（方差缩减 58%）→ 三大坑实测（新奇效应/多重比较/辛普森悖论）；全部方法学对照权威源核对（NIST / WSDM-CUPED / KDD-SRM / Holm / Wilson）
 - 2026-09-15：**知识库 04-experimentation 两篇落地**（ab-test-design + pitfalls），由 PRJ-2 实战反哺；补全 CUPED、SRM、多重比较、偷看问题、新奇效应、辛普森悖论等口径，并核对 Kohavi《Trustworthy Online Controlled Experiments》/ Johari always-valid 等权威源
 - 2026-09-15：**活动效果评估篇落地**（03-analysis-frameworks/event-campaign.md）：讲清"无法做 A/B 时怎么算增量"——五步流程（目标/构造对照/隔离混杂/算增量/算 ROI）+ 四类反事实方法（前后对比/DID/PSM/合成控制）+ 提前消费陷阱；核对 Rosenbaum & Rubin、Abadie、Card & Krueger、Brodersen（CausalImpact）等权威源
+- 2026-09-15：**PRJ-3 指标体系看板完成**（合成 180 天 × 渠道/机型/地域明细）：分层指标体系（北极星 DAU + 增长/留存/参与/变现 + 护栏）+ SQL 指标层（窗口函数环比/7日均线）+ 去季节稳健 z 分数异常检测（28 点全部对上埋入事件）+ 单文件零依赖静态看板；核对 HEART（Rodden 2010）/ NIST 离群点检测等权威源

@@ -1,0 +1,7 @@
+# 生成物不入库（可由脚本一键复现）
+data/*.csv
+data/*.json
+data/*.db
+assets/*.png
+assets/*.html
+__pycache__/
