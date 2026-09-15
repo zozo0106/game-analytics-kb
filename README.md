@@ -122,7 +122,7 @@ game-analytics-kb/
 - [x] P1-2：retention / monetization / acquisition 三篇 ✅ 已核对（留存/商业化/买量）
 - [x] P1-3a：ab-test-design + pitfalls（A/B 设计 + 避坑）✅ 已核对（反哺自 PRJ-2）
 - [x] P1-3b：event-campaign 活动效果评估 ✅ 已核对（DID/PSM/合成控制，落 03-analysis-frameworks）
-- [ ] P2：RAG 化改造（向量化 + 问答 demo）
+- [x] P2：RAG 化改造（向量化 + 问答 demo）✅ 已跑通 → [projects/04-rag-qa](projects/04-rag-qa/)（BM25+LSA+RRF 混合检索，R@1 0.763 / MRR 0.842）
 - [ ] 长期：case-studies 持续沉淀
 
 ## 📌 维护日志
@@ -134,3 +134,4 @@ game-analytics-kb/
 - 2026-09-15：**活动效果评估篇落地**（03-analysis-frameworks/event-campaign.md）：讲清"无法做 A/B 时怎么算增量"——五步流程（目标/构造对照/隔离混杂/算增量/算 ROI）+ 四类反事实方法（前后对比/DID/PSM/合成控制）+ 提前消费陷阱；核对 Rosenbaum & Rubin、Abadie、Card & Krueger、Brodersen（CausalImpact）等权威源
 - 2026-09-15：**PRJ-3 指标体系看板完成**（合成 180 天 × 渠道/机型/地域明细）：分层指标体系（北极星 DAU + 增长/留存/参与/变现 + 护栏）+ SQL 指标层（窗口函数环比/7日均线）+ 去季节稳健 z 分数异常检测（28 点全部对上埋入事件）+ 单文件零依赖静态看板；核对 HEART（Rodden 2010）/ NIST 离群点检测等权威源
 - 2026-09-16：**02-metrics 三篇落地**（retention / monetization / acquisition）：留存体系（N-day vs unbounded 口径、Cohort、留存曲线=生存函数、拐点定位）、商业化指标勾稽（ARPU=ARPPU×付费率、鲸鱼曲线、LTV 按批次、ROAS 回收节奏）、买量归因（归因≠增量、多触点归因、Ghost Ads/Geo 实验）；核对 Kaplan-Meier (1958) / Fader-Hardie sBG / Berger-Nasr CLV / Shao-Li (KDD 2011) / Dalessandro (ADKDD 2012) / Johnson (JMR 2017 Ghost Ads) 等权威源
+- 2026-09-16：**PRJ-4 知识库 RAG 问答完成**（把本库变成可检索问答，零 API key 离线可复现）：Markdown 分块 + 中文单字/bigram 分词 + BM25 稀疏 + LSA 稠密 + RRF 融合 + 抽取式作答 + 拒答闸门；38 题标注评测（混合 R@1 0.763 / R@3 0.974 / MRR 0.842，域外拦截 5/5）；消融发现标题路径入索引带来 R@1 +18pp；核对 Lewis (RAG, 2020) / Robertson-Zaragoza (BM25) / Cormack (RRF) / Karpukhin (DPR) / Deerwester (LSA) 等权威源

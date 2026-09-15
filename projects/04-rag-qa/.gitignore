@@ -1,0 +1,7 @@
+# 生成物不入库（可一键复现）
+data/index.pkl
+data/eval_results.json
+assets/*.png
+__pycache__/
+
+# 注意：data/eval_questions.json 是人工标注的**源文件**，必须入库
