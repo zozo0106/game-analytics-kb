@@ -100,6 +100,7 @@ updated: 2026-09-09
 - [新增与买量分析：归因、成本与 ROAS 入门](acquisition.md)
 - [流失分析框架](../03-analysis-frameworks/churn-analysis.md)
 - [用户分层框架](../03-analysis-frameworks/user-portrait.md)
+- [高频 SQL 配方：留存、漏斗与窗口函数实战](../05-infrastructure/sql-recipes.md) —— 口径怎么落成可复现的 SQL
 - [商业化专题分析](../03-analysis-frameworks/monetization-analysis.md)（待写）
 
 ## 参考来源

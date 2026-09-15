@@ -83,7 +83,7 @@ game-analytics-kb/
 | event-tracking.md | 埋点与日志规范（分析师的命根子） | P2 |
 | dw-modeling.md | 数仓分层与主题建模（呼应数据治理功底） | P2 |
 | reporting.md | 报表体系建设：从日报到自助看板 | P2 |
-| sql-recipes.md | 高频 SQL 配方：留存计算/漏斗/窗口函数实战 | P1 |
+| sql-recipes.md | 高频 SQL 配方：留存计算/漏斗/窗口函数实战 | ✅ 已写 |
 
 ### 06-ai-playbook AI + 游戏数据分析（差异化卖点）
 | 文档 | 内容 | 优先级 |
@@ -125,6 +125,7 @@ game-analytics-kb/
 - [x] P1-3b：event-campaign 活动效果评估 ✅ 已核对（DID/PSM/合成控制，落 03-analysis-frameworks）
 - [x] P2：RAG 化改造（向量化 + 问答 demo）✅ 已跑通 → [projects/04-rag-qa](projects/04-rag-qa/)（BM25+LSA+RRF 混合检索，R@1 0.763 / MRR 0.842）
 - [x] P2-doc：06-ai-playbook/rag-setup.md ✅ 已核对（反哺自 PRJ-4，讲清"检索层才是瓶颈"）
+- [x] P1-doc：05-infrastructure/sql-recipes.md ✅ 已核对（留存/漏斗/连续活跃/窗口 frame 四组配方，SQL 在 sqlite3 实跑验证）
 - [ ] 长期：case-studies 持续沉淀
 
 ## 📌 维护日志
@@ -136,5 +137,6 @@ game-analytics-kb/
 - 2026-09-15：**活动效果评估篇落地**（03-analysis-frameworks/event-campaign.md）：讲清"无法做 A/B 时怎么算增量"——五步流程（目标/构造对照/隔离混杂/算增量/算 ROI）+ 四类反事实方法（前后对比/DID/PSM/合成控制）+ 提前消费陷阱；核对 Rosenbaum & Rubin、Abadie、Card & Krueger、Brodersen（CausalImpact）等权威源
 - 2026-09-15：**PRJ-3 指标体系看板完成**（合成 180 天 × 渠道/机型/地域明细）：分层指标体系（北极星 DAU + 增长/留存/参与/变现 + 护栏）+ SQL 指标层（窗口函数环比/7日均线）+ 去季节稳健 z 分数异常检测（28 点全部对上埋入事件）+ 单文件零依赖静态看板；核对 HEART（Rodden 2010）/ NIST 离群点检测等权威源
 - 2026-09-16：**02-metrics 三篇落地**（retention / monetization / acquisition）：留存体系（N-day vs unbounded 口径、Cohort、留存曲线=生存函数、拐点定位）、商业化指标勾稽（ARPU=ARPPU×付费率、鲸鱼曲线、LTV 按批次、ROAS 回收节奏）、买量归因（归因≠增量、多触点归因、Ghost Ads/Geo 实验）；核对 Kaplan-Meier (1958) / Fader-Hardie sBG / Berger-Nasr CLV / Shao-Li (KDD 2011) / Dalessandro (ADKDD 2012) / Johnson (JMR 2017 Ghost Ads) 等权威源
-- 2026-09-16：**PRJ-4 知识库 RAG 问答完成**（把本库变成可检索问答，零 API key 离线可复现）：Markdown 分块 + 中文单字/bigram 分词 + BM25 稀疏 + LSA 稠密 + RRF 融合 + 抽取式作答 + 拒答闸门；38 题标注评测（混合 R@1 0.763 / R@3 0.974 / MRR 0.842，域外拦截 5/5）；消融发现标题路径入索引带来 R@1 +18pp；核对 Lewis (RAG, 2020) / Robertson-Zaragoza (BM25) / Cormack (RRF) / Karpukhin (DPR) / Deerwester (LSA) 等权威源
-- 2026-09-16：**06-ai-playbook/rag-setup.md 落地**（反哺自 PRJ-4）：讲清 RAG 五步链路（分块/分词/检索/融合/作答+拒答）、四个关键口径（标题入索引、单字+bigram、BM25+稠密 RRF、拒答闸门），附本仓库实测数字与三条反直觉结论（标题加权 +18pp R@1 / 小语料 BM25 胜稠密 / 进 top-5≠答得对）
+- 2026-09-16：**PRJ-4 知识库 RAG 问答完成**（把本库变成可检索问答，零 API key 离线可复现）：Markdown 分块 + 中文单字/bigram 分词 + BM25 稀疏 + LSA 稠密 + RRF 融合 + 抽取式作答 + 拒答闸门；42 题标注 + 5 域外评测（混合 R@1 0.786 / R@3 0.929 / R@5 0.976 / MRR 0.861，拒答 4/5、作答 42/42）；消融发现标题路径入索引带来混合 R@1 +7.1pp（稠密单路 +14.3pp）；拒答做了「减法」：三道闸门实测只留一道（实词未登录占比），并如实记录挡不住「主题域外」一类；核对 Lewis (RAG, 2020) / Robertson-Zaragoza (BM25) / Cormack (RRF) / Karpukhin (DPR) / Deerwester (LSA) 等权威源
+- 2026-09-16：**06-ai-playbook/rag-setup.md 落地**（反哺自 PRJ-4）：讲清 RAG 五步链路（分块/分词/检索/融合/作答+拒答）、四个关键口径（标题入索引、单字+bigram、BM25+稠密 RRF、拒答闸门），附本仓库实测数字与几条反直觉结论（标题加权约 +7pp R@1 / 小语料 BM25 胜稠密 / 进 top-5≠答得对 / 拒答的减法与虚词注水）
+- 2026-09-16：**05-infrastructure/sql-recipes.md 落地**（P1，一直欠着的那篇）：四组配方（N-day vs 滚动留存 / 窗口 frame 默认累计陷阱 / gaps&islands 连续活跃 / 有序漏斗）+ 反模式清单；所有 SQL 在本机 sqlite3 实跑，实测数字为合成数据（D7 固定日 26.00% vs 滚动 51.50%，默认 frame 55/181/236 对 全分区 443）；核对 PG 官方文档（frame 默认值）+ Flajolet HLL (DOI:10.46298/dmtcs.3545) + Kellenberger&Groom (DOI:10.1007/978-1-4842-1103-8)
