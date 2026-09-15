@@ -14,8 +14,8 @@
 
 | # | 项目 | 核心能力 | 状态 |
 |:--|:---|:---|:---|
-| 01 | [用户流失预测](01-churn-model/) | 指标口径 · 特征工程 · 分类模型 · 业务落地 | 🚧 开发中 |
-| 02 | [A/B 测试分析框架](02-ab-test/) | 实验设计 · 统计显著性 · 结论模板 | ⏳ 待办 |
+| 01 | [用户流失预测](01-churn-model/) | 指标口径 · 特征工程 · 分类模型 · 业务落地 | ✅ 已完成 |
+| 02 | [A/B 测试分析框架](02-ab-test/) | 实验设计 · 统计检验 · CUPED · 避坑 | ✅ 已完成 |
 | 03 | [指标体系看板](03-metrics-dashboard/) | 北极星+护栏指标 · SQL · 看板 | ⏳ 待办 |
 
 ## 每个项目的统一结构
@@ -38,9 +38,9 @@
 cd 0X-<项目名>
 pip install -r requirements.txt
 python data/generate_data.py        # 1. 生成合成数据
-python python/build_features.py     # 2. SQL 提特征
-python python/01_eda.py             # 3. 探索性分析
-python python/02_churn_model.py     # 4. 建模评估
+python python/build_features.py     # 2. SQL 提特征/指标
+python python/01_*.py               # 3. 第一步分析（EDA / 实验体检）
+python python/02_*.py               # 4. 主分析（建模 / 检验）
 ```
 
 - 数据全部为**合成数据**（无真实/敏感数据），seed 固定，结果可复现

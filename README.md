@@ -32,7 +32,7 @@ game-analytics-kb/
 ├── projects/                        # 🛠️ 实战项目层（能跑能讲，面试弹药）
 │   ├── README.md
 │   ├── 01-churn-model/              # 流失预测（SQL + Python，已完成）
-│   ├── 02-ab-test/                  # A/B 测试框架（规划中）
+│   ├── 02-ab-test/                  # A/B 测试框架（已完成）
 │   └── 03-metrics-dashboard/        # 指标体系看板（规划中）
 ├── templates/
 │   └── article-template.md          # 文章模板（RAG 友好）
@@ -117,7 +117,7 @@ game-analytics-kb/
 - [x] P0-3：user-portrait.md（用户分层）✅ 已核对
 - [x] PRJ-1：projects/01-churn-model 流失预测（SQL+Python 全链路，AUC 0.93）✅ 已跑通
 - [ ] P1-1：repo 上线 GitHub（README 门户完善 + git init + 推送）
-- [ ] PRJ-2：projects/02-ab-test A/B 测试框架
+- [x] PRJ-2：projects/02-ab-test A/B 测试框架（设计+检验+CUPED+三大坑，含报告）✅ 已跑通
 - [ ] PRJ-3：projects/03-metrics-dashboard 指标体系看板
 - [ ] P1-2：retention / monetization / acquisition
 - [ ] P1-3：ab-test-design + event-campaign
@@ -128,3 +128,4 @@ game-analytics-kb/
 - 2026-09-09：建立骨架与写作规范
 - 2026-09-10：P0 三篇完成并通过权威源核对（GameAnalytics 官方博客等）；确立「发布前权威源核对」强制规范
 - 2026-09-11：新增 **projects/ 实战项目层**；PRJ-1 流失预测跑通（合成数据 8,000 用户，AUC 0.93，Top10% 提升度 4.11x），含 SQL 特征提取 + 建模评估 + 分析报告
+- 2026-09-15：**PRJ-2 A/B 测试分析框架完成**（合成 20,000 用户 × 14 天）：前置体检（功效/SRM/分层）→ 主次指标检验 → CUPED（方差缩减 58%）→ 三大坑实测（新奇效应/多重比较/辛普森悖论）；全部方法学对照权威源核对（NIST / WSDM-CUPED / KDD-SRM / Holm / Wilson）
