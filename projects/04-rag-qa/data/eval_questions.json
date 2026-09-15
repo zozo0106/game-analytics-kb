@@ -40,6 +40,11 @@
     {"q": "CUPED 为什么能降低方差？", "gold_docs": ["docs/04-experimentation/ab-test-design.md"]},
     {"q": "护栏指标是干什么用的？", "gold_docs": ["docs/04-experimentation/ab-test-design.md", "docs/02-metrics/monetization.md"]},
 
+    {"q": "RAG 的效果瓶颈在哪个环节？", "gold_docs": ["docs/06-ai-playbook/rag-setup.md"]},
+    {"q": "RRF 融合为什么比加权求和好？", "gold_docs": ["docs/06-ai-playbook/rag-setup.md"]},
+    {"q": "为什么要让问答系统学会拒答？", "gold_docs": ["docs/06-ai-playbook/rag-setup.md"]},
+    {"q": "分块时为什么要把标题路径也放进索引？", "gold_docs": ["docs/06-ai-playbook/rag-setup.md"]},
+
     {"q": "今天晚饭吃什么比较好？", "gold_docs": [], "expect": "abstain"},
     {"q": "帮我订一张明天去北京的机票", "gold_docs": [], "expect": "abstain"},
     {"q": "Python 的 GIL 是什么？", "gold_docs": [], "expect": "abstain"},

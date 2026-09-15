@@ -2,7 +2,7 @@
 """
 eval_retrieval.py —— 检索层评测：BM25 vs 稠密(LSA) vs 混合(RRF)
 ================================================================
-用人工标注的 38 题评测集（data/eval_questions.json），比较三种检索模式的
+用人工标注的 42 题评测集（data/eval_questions.json），比较三种检索模式的
 Recall@1/3/5 与 MRR，回答一个很实际的问题：**小语料上到底要不要上向量检索？**
 
 输出：data/eval_results.json

@@ -197,8 +197,9 @@ class RagIndex:
     # ---- 构建 ----
     @classmethod
     def build(cls, docs: list[Path], base: Path | None = None,
-              n_components: int = 128) -> "RagIndex":
-        """docs: markdown 文件路径；base: 若非空，则 doc 名存为相对 base 的路径（便于展示）。"""
+              n_components: int = 128, use_heading: bool = True) -> "RagIndex":
+        """docs: markdown 文件路径；base: 若非空，则 doc 名存为相对 base 的路径（便于展示）。
+        use_heading: 是否把标题路径拼进检索文本（消融用，默认开）。"""
         chunks: list[Chunk] = []
         for p in docs:
             p = Path(p)
@@ -209,7 +210,8 @@ class RagIndex:
             c.cid = i
         # 检索文本 = 标题路径 + 正文（标题里的关键词通常最有区分度）；
         # 展示/抽取仍用干净的 c.text，避免答案里混进标题
-        index_texts = [f"{c.heading_path}\n{c.text}" for c in chunks]
+        index_texts = [f"{c.heading_path}\n{c.text}" if use_heading else c.text
+                       for c in chunks]
         bm25 = BM25([tokenize(t) for t in index_texts])
         lsa = LsaEncoder(n_components=n_components)
         Z = lsa.fit(index_texts)

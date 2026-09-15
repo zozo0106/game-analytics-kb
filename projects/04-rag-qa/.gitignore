@@ -5,3 +5,4 @@ assets/*.png
 __pycache__/
 
 # 注意：data/eval_questions.json 是人工标注的**源文件**，必须入库
+data/ablation_heading.json

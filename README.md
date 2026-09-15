@@ -33,7 +33,8 @@ game-analytics-kb/
 │   ├── README.md
 │   ├── 01-churn-model/              # 流失预测（SQL + Python，已完成）
 │   ├── 02-ab-test/                  # A/B 测试框架（已完成）
-│   └── 03-metrics-dashboard/        # 指标体系看板（规划中）
+│   ├── 03-metrics-dashboard/        # 指标体系看板（已完成）
+│   └── 04-rag-qa/                   # 知识库 RAG 问答（已完成）
 ├── templates/
 │   └── article-template.md          # 文章模板（RAG 友好）
 └── assets/                          # 图片 / 样例数据
@@ -88,7 +89,7 @@ game-analytics-kb/
 | 文档 | 内容 | 优先级 |
 |:---|:---|:---|
 | llm-for-analysts.md | LLM 在游戏分析中的真实用法与边界 | P2 |
-| rag-setup.md | 把本知识库做成 RAG 问答系统（项目化） | P2 |
+| rag-setup.md | 把本知识库做成 RAG 问答系统（项目化） | ✅ 已写 |
 | agent-workflows.md | AI Agent 自动化分析工作流实战 | P3 |
 
 ### 07-case-studies 实战复盘（脱敏 · 别人写不出的部分）
@@ -123,6 +124,7 @@ game-analytics-kb/
 - [x] P1-3a：ab-test-design + pitfalls（A/B 设计 + 避坑）✅ 已核对（反哺自 PRJ-2）
 - [x] P1-3b：event-campaign 活动效果评估 ✅ 已核对（DID/PSM/合成控制，落 03-analysis-frameworks）
 - [x] P2：RAG 化改造（向量化 + 问答 demo）✅ 已跑通 → [projects/04-rag-qa](projects/04-rag-qa/)（BM25+LSA+RRF 混合检索，R@1 0.763 / MRR 0.842）
+- [x] P2-doc：06-ai-playbook/rag-setup.md ✅ 已核对（反哺自 PRJ-4，讲清"检索层才是瓶颈"）
 - [ ] 长期：case-studies 持续沉淀
 
 ## 📌 维护日志
@@ -135,3 +137,4 @@ game-analytics-kb/
 - 2026-09-15：**PRJ-3 指标体系看板完成**（合成 180 天 × 渠道/机型/地域明细）：分层指标体系（北极星 DAU + 增长/留存/参与/变现 + 护栏）+ SQL 指标层（窗口函数环比/7日均线）+ 去季节稳健 z 分数异常检测（28 点全部对上埋入事件）+ 单文件零依赖静态看板；核对 HEART（Rodden 2010）/ NIST 离群点检测等权威源
 - 2026-09-16：**02-metrics 三篇落地**（retention / monetization / acquisition）：留存体系（N-day vs unbounded 口径、Cohort、留存曲线=生存函数、拐点定位）、商业化指标勾稽（ARPU=ARPPU×付费率、鲸鱼曲线、LTV 按批次、ROAS 回收节奏）、买量归因（归因≠增量、多触点归因、Ghost Ads/Geo 实验）；核对 Kaplan-Meier (1958) / Fader-Hardie sBG / Berger-Nasr CLV / Shao-Li (KDD 2011) / Dalessandro (ADKDD 2012) / Johnson (JMR 2017 Ghost Ads) 等权威源
 - 2026-09-16：**PRJ-4 知识库 RAG 问答完成**（把本库变成可检索问答，零 API key 离线可复现）：Markdown 分块 + 中文单字/bigram 分词 + BM25 稀疏 + LSA 稠密 + RRF 融合 + 抽取式作答 + 拒答闸门；38 题标注评测（混合 R@1 0.763 / R@3 0.974 / MRR 0.842，域外拦截 5/5）；消融发现标题路径入索引带来 R@1 +18pp；核对 Lewis (RAG, 2020) / Robertson-Zaragoza (BM25) / Cormack (RRF) / Karpukhin (DPR) / Deerwester (LSA) 等权威源
+- 2026-09-16：**06-ai-playbook/rag-setup.md 落地**（反哺自 PRJ-4）：讲清 RAG 五步链路（分块/分词/检索/融合/作答+拒答）、四个关键口径（标题入索引、单字+bigram、BM25+稠密 RRF、拒答闸门），附本仓库实测数字与三条反直觉结论（标题加权 +18pp R@1 / 小语料 BM25 胜稠密 / 进 top-5≠答得对）
