@@ -121,7 +121,7 @@ game-analytics-kb/
 - [ ] PRJ-3：projects/03-metrics-dashboard 指标体系看板
 - [ ] P1-2：retention / monetization / acquisition
 - [x] P1-3a：ab-test-design + pitfalls（A/B 设计 + 避坑）✅ 已核对（反哺自 PRJ-2）
-- [ ] P1-3b：event-campaign 活动效果评估
+- [x] P1-3b：event-campaign 活动效果评估 ✅ 已核对（DID/PSM/合成控制，落 03-analysis-frameworks）
 - [ ] P2：RAG 化改造（向量化 + 问答 demo）
 - [ ] 长期：case-studies 持续沉淀
 
@@ -131,3 +131,4 @@ game-analytics-kb/
 - 2026-09-11：新增 **projects/ 实战项目层**；PRJ-1 流失预测跑通（合成数据 8,000 用户，AUC 0.93，Top10% 提升度 4.11x），含 SQL 特征提取 + 建模评估 + 分析报告
 - 2026-09-15：**PRJ-2 A/B 测试分析框架完成**（合成 20,000 用户 × 14 天）：前置体检（功效/SRM/分层）→ 主次指标检验 → CUPED（方差缩减 58%）→ 三大坑实测（新奇效应/多重比较/辛普森悖论）；全部方法学对照权威源核对（NIST / WSDM-CUPED / KDD-SRM / Holm / Wilson）
 - 2026-09-15：**知识库 04-experimentation 两篇落地**（ab-test-design + pitfalls），由 PRJ-2 实战反哺；补全 CUPED、SRM、多重比较、偷看问题、新奇效应、辛普森悖论等口径，并核对 Kohavi《Trustworthy Online Controlled Experiments》/ Johari always-valid 等权威源
+- 2026-09-15：**活动效果评估篇落地**（03-analysis-frameworks/event-campaign.md）：讲清"无法做 A/B 时怎么算增量"——五步流程（目标/构造对照/隔离混杂/算增量/算 ROI）+ 四类反事实方法（前后对比/DID/PSM/合成控制）+ 提前消费陷阱；核对 Rosenbaum & Rubin、Abadie、Card & Krueger、Brodersen（CausalImpact）等权威源
