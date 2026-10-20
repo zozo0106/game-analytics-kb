@@ -1,0 +1,26 @@
+{
+  "engine": "rule_based_v1",
+  "ref_date": "2026-06-30",
+  "total": 40,
+  "correct": 40,
+  "execution_accuracy": 1.0,
+  "by_difficulty": {
+    "easy": {
+      "n": 10,
+      "correct": 10,
+      "ex": 1.0
+    },
+    "medium": {
+      "n": 20,
+      "correct": 20,
+      "ex": 1.0
+    },
+    "hard": {
+      "n": 10,
+      "correct": 10,
+      "ex": 1.0
+    }
+  },
+  "error_breakdown": {},
+  "errors": []
+}

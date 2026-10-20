@@ -34,7 +34,8 @@ game-analytics-kb/
 │   ├── 01-churn-model/              # 流失预测（SQL + Python，已完成）
 │   ├── 02-ab-test/                  # A/B 测试框架（已完成）
 │   ├── 03-metrics-dashboard/        # 指标体系看板（已完成）
-│   └── 04-rag-qa/                   # 知识库 RAG 问答（已完成）
+│   ├── 04-rag-qa/                   # 知识库 RAG 问答（已完成）
+│   └── 05-nl2sql/                   # NL2SQL 助手（已完成）
 ├── templates/
 │   └── article-template.md          # 文章模板（RAG 友好）
 └── assets/                          # 图片 / 样例数据

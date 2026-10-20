@@ -1,0 +1,252 @@
+{
+  "engine": "rule_based_v1",
+  "ref_date": "2026-06-30",
+  "total": 20,
+  "correct": 12,
+  "execution_accuracy": 0.6,
+  "by_difficulty": {
+    "easy": {
+      "n": 5,
+      "correct": 4,
+      "ex": 0.8
+    },
+    "medium": {
+      "n": 9,
+      "correct": 8,
+      "ex": 0.8889
+    },
+    "hard": {
+      "n": 6,
+      "correct": 0,
+      "ex": 0.0
+    }
+  },
+  "error_breakdown": {
+    "聚合口径错": 3,
+    "维度取值或 Join 错": 5
+  },
+  "errors": [
+    {
+      "id": "H1",
+      "q": "昨天的活跃用户数",
+      "type": "聚合口径错",
+      "gen": "SELECT COUNT(DISTINCT da.user_id) AS metric FROM daily_active da",
+      "gold_rows": [
+        [
+          1905
+        ]
+      ],
+      "gen_rows": [
+        [
+          5946
+        ]
+      ]
+    },
+    {
+      "id": "H2",
+      "q": "各个渠道昨天带来多少收入",
+      "type": "维度取值或 Join 错",
+      "gen": "SELECT u.channel AS dim, ROUND(SUM(p.amount), 2) AS metric FROM purchases p JOIN users u ON p.user_id = u.user_id GROUP BY u.channel",
+      "gold_rows": [
+        [
+          "买量-抖音",
+          1768.8
+        ],
+        [
+          "买量-腾讯",
+          602.4
+        ],
+        [
+          "应用商店",
+          1963.2
+        ]
+      ],
+      "gen_rows": [
+        [
+          "买量-抖音",
+          160841.2
+        ],
+        [
+          "买量-腾讯",
+          73072.4
+        ],
+        [
+          "应用商店",
+          74634.0
+        ]
+      ]
+    },
+    {
+      "id": "H6",
+      "q": "收入最高的那一天是多少",
+      "type": "聚合口径错",
+      "gen": "SELECT ROUND(SUM(p.amount), 2) AS metric FROM purchases p",
+      "gold_rows": [
+        [
+          "2026-06-16",
+          11582.0
+        ]
+      ],
+      "gen_rows": [
+        [
+          506194.0
+        ]
+      ]
+    },
+    {
+      "id": "H7",
+      "q": "各渠道最近30天的收入和订单数",
+      "type": "维度取值或 Join 错",
+      "gen": "SELECT u.channel AS dim, COUNT(*) AS metric FROM purchases p JOIN users u ON p.user_id = u.user_id WHERE p.order_date >= '2026-06-01' AND p.order_date <= '2026-06-30' GROUP BY u.channel",
+      "gold_rows": [
+        [
+          "买量-抖音",
+          71871.6,
+          850
+        ],
+        [
+          "买量-腾讯",
+          33558.0,
+          423
+        ],
+        [
+          "应用商店",
+          36333.2,
+          461
+        ]
+      ],
+      "gen_rows": [
+        [
+          "买量-抖音",
+          850
+        ],
+        [
+          "买量-腾讯",
+          423
+        ],
+        [
+          "应用商店",
+          461
+        ]
+      ]
+    },
+    {
+      "id": "H9",
+      "q": "各个商品类型的平均订单金额",
+      "type": "维度取值或 Join 错",
+      "gen": "SELECT pr.product_type AS dim, COUNT(*) AS metric FROM purchases p JOIN products pr ON p.product_id = pr.product_id GROUP BY pr.product_type",
+      "gold_rows": [
+        [
+          "月卡",
+          20.4
+        ],
+        [
+          "皮肤",
+          181.86
+        ],
+        [
+          "礼包",
+          91.35
+        ]
+      ],
+      "gen_rows": [
+        [
+          "月卡",
+          951
+        ],
+        [
+          "皮肤",
+          1539
+        ],
+        [
+          "礼包",
+          2041
+        ]
+      ]
+    },
+    {
+      "id": "H10",
+      "q": "最近7天活跃用户里付费的有多少",
+      "type": "聚合口径错",
+      "gen": "SELECT COUNT(DISTINCT da.user_id) AS metric FROM daily_active da WHERE da.log_date >= '2026-06-24' AND da.log_date <= '2026-06-30'",
+      "gold_rows": [
+        [
+          307
+        ]
+      ],
+      "gen_rows": [
+        [
+          4937
+        ]
+      ]
+    },
+    {
+      "id": "H14",
+      "q": "各渠道最近7天人均会话数",
+      "type": "维度取值或 Join 错",
+      "gen": "SELECT u.channel AS dim, SUM(da.sessions) AS metric FROM daily_active da JOIN users u ON da.user_id = u.user_id WHERE da.log_date >= '2026-06-24' AND da.log_date <= '2026-06-30' GROUP BY u.channel",
+      "gold_rows": [
+        [
+          "买量-抖音",
+          7.42
+        ],
+        [
+          "买量-腾讯",
+          7.17
+        ],
+        [
+          "应用商店",
+          7.22
+        ]
+      ],
+      "gen_rows": [
+        [
+          "买量-抖音",
+          11371
+        ],
+        [
+          "买量-腾讯",
+          6835
+        ],
+        [
+          "应用商店",
+          5362
+        ]
+      ]
+    },
+    {
+      "id": "H15",
+      "q": "最近30天各商品类型的收入占比",
+      "type": "维度取值或 Join 错",
+      "gen": "SELECT pr.product_type AS dim, ROUND(SUM(p.amount), 2) AS metric FROM purchases p JOIN products pr ON p.product_id = pr.product_id WHERE p.order_date >= '2026-06-01' AND p.order_date <= '2026-06-30' GROUP BY pr.product_type",
+      "gold_rows": [
+        [
+          "月卡",
+          0.0382
+        ],
+        [
+          "皮肤",
+          0.5508
+        ],
+        [
+          "礼包",
+          0.3719
+        ]
+      ],
+      "gen_rows": [
+        [
+          "月卡",
+          9132.0
+        ],
+        [
+          "皮肤",
+          131578.4
+        ],
+        [
+          "礼包",
+          88840.0
+        ]
+      ]
+    }
+  ]
+}
